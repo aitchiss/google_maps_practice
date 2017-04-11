@@ -31,9 +31,12 @@ MapWrapper.prototype = {
   },
 
   getInfoWindow: function(contentString){
-    // var contentString = "<p>Alloa is a beautiful, and yet awful, town in the heart of Clackmannanshire</p>"
     return new google.maps.InfoWindow({
       content: contentString
     })
+  },
+
+  changeLocation: function(coords){
+    this.googleMap.setCenter(coords)
   }
 }
