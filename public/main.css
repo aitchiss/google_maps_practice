@@ -11,9 +11,23 @@ body{
   
 }
 
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+
 
 #escape-to-bangkok{
   background-color: red;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#where-am-i{
+  background-color: green;
   color: white;
   border: none;
   margin-top: 10px;

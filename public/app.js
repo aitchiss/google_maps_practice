@@ -8,6 +8,9 @@ var initialize = function(){
   var escapeButton = document.querySelector('#escape-to-bangkok')
   escapeButton.onclick = onEscapeButtonClick
 
+  var whereAmIButton = document.querySelector('#where-am-i')
+  whereAmIButton.onclick = onWhereAmIButtonClick
+
   mainMap.addMarker(center, infoWindow)
   mainMap.addClickEvent()
 }
@@ -15,6 +18,13 @@ var initialize = function(){
 var onEscapeButtonClick = function(){
   
   mainMap.changeLocation({lat: 13.756331, lng: 100.501765})
+}
+
+var onWhereAmIButtonClick = function(){
+  navigator.geolocation.getCurrentPosition(function(position){
+    console.log(position)
+    mainMap.changeLocation({lat: position.coords.latitude, lng: position.coords.longitude})
+  })
 }
 
 

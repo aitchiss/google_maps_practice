@@ -18,16 +18,12 @@ MapWrapper.prototype = {
         infoWindow.open(this.googleMap, marker)
       })
     }
-
-    
   },
 
   addClickEvent: function(){
-  
     google.maps.event.addListener(this.googleMap, 'click', function(event){
       this.addMarker(event.latLng)
     }.bind(this))
-    
   },
 
   getInfoWindow: function(contentString){
