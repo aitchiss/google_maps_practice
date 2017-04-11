@@ -4,12 +4,14 @@ var MapWrapper = function(container, coords, zoom){
     center: coords,
     zoom: zoom
   })
+
 }
 
 MapWrapper.prototype = {
   addMarker: function(coords, infoWindow){
     var marker = new google.maps.Marker({
       position: coords,
+      icon: 'goat.png',
       map: this.googleMap
     })
 
