@@ -13,18 +13,18 @@ MapWrapper.prototype = {
       map: this.googleMap
     })
 
-    marker.addListener('click', function(){
-      infoWindow.open(this.googleMap, marker)
-    })
+    if(infoWindow){
+      marker.addListener('click', function(){
+        infoWindow.open(this.googleMap, marker)
+      })
+    }
+
+    
   },
 
   addClickEvent: function(){
   
     google.maps.event.addListener(this.googleMap, 'click', function(event){
-      // var coords = {
-      //   lat: event.latLng.lat(),
-      //   lng: event.latLng.lng()
-      // }
       this.addMarker(event.latLng)
     }.bind(this))
     
